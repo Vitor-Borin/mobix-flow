@@ -67,7 +67,7 @@ const Solucao = () => {
 
         <div className="mt-20 grid gap-16 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-20 lg:gap-32">
           <div className="md:sticky md:top-28 md:self-start">
-            <div className="relative mx-auto aspect-[9/19] w-full max-w-[18rem] overflow-hidden rounded-[2.4rem] border-[6px] border-[#22252c] bg-black shadow-[0_40px_80px_-30px_rgb(46_75_255/0.45)]">
+            <div className="relative mx-auto aspect-[9/19] w-full max-w-[min(18rem,32svh)] overflow-hidden rounded-[2.4rem] border-[6px] border-[#22252c] bg-black shadow-[0_40px_80px_-30px_rgb(46_75_255/0.45)]">
               {telasPorEtapa.map((imagem, indice) => (
                 <img
                   key={indice}
@@ -82,7 +82,7 @@ const Solucao = () => {
                 <span ref={rotuloRef}>{etapas[0].rotulo}</span>
               </p>
             </div>
-            <p className="mx-auto mt-5 max-w-[18rem] font-mono text-[0.72rem] leading-5 text-cinza">
+            <p className="mx-auto mt-5 max-w-[min(18rem,32svh)] font-mono text-[0.72rem] leading-5 text-cinza">
               Texto lido: <span ref={ocrRef} className="text-giz">...</span>
             </p>
           </div>

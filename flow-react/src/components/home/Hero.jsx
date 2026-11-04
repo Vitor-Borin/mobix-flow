@@ -43,14 +43,17 @@ const Hero = () => {
           },
         })
 
-        // Ao rolar, as duas linhas do título se afastam e o celular chega mais perto
+        // Ao rolar, os textos saem pelos lados e só o celular continua, descendo
         const saida = gsap.timeline({
-          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: true },
+          defaults: { ease: "power1.in" },
+          scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: 0.4 },
         })
         saida
-          .to(".hero-linha-1", { xPercent: -14, ease: "none" }, 0)
-          .to(".hero-linha-2", { xPercent: 14, ease: "none" }, 0)
-          .to(".hero-celular", { scale: 1.25, yPercent: 8, ease: "none" }, 0)
+          .to(".hero-sai-esquerda", { xPercent: -110, opacity: 0, duration: 0.32 }, 0)
+          .to(".hero-sai-direita", { xPercent: 110, opacity: 0, duration: 0.32 }, 0)
+          .to(".hero-sai-cima", { yPercent: -150, opacity: 0, duration: 0.22 }, 0)
+          .to(".hero-sai-baixo", { opacity: 0, duration: 0.2 }, 0)
+          .to(".hero-celular-movel", { yPercent: 38, scale: 1.08, ease: "none", duration: 1 }, 0)
       })
     },
     { scope: heroRef }
@@ -78,18 +81,22 @@ const Hero = () => {
     <section ref={heroRef} className="relative isolate flex min-h-svh flex-col overflow-hidden bg-black px-5 pb-8 pt-24 text-giz sm:px-10 sm:pb-10 sm:pt-28">
       <Visor className="hero-tela pointer-events-none absolute inset-3 text-giz/40 sm:inset-5" />
 
-      <div aria-hidden="true" className="hero-celular pointer-events-none absolute left-1/2 top-[42%] -z-10 w-[56vw] -translate-x-1/2 -translate-y-1/2 sm:top-1/2 sm:w-[min(48vw,26rem)] lg:w-[min(34vw,32rem)]">
-        <img src="/img/mobixcapa.png" alt="" width="1024" height="1536" fetchPriority="high" className="w-full" />
-        <Visor className="hero-foco absolute left-[21%] top-[9%] h-[34%] w-[29%] text-rec" />
+      <div aria-hidden="true" className="hero-celular pointer-events-none absolute left-1/2 top-[42%] -z-10 w-[min(56vw,40svh)] -translate-x-1/2 -translate-y-1/2 sm:top-1/2 sm:w-[min(48vw,46svh)] lg:w-[min(34vw,50svh)]">
+        <div className="hero-celular-movel relative">
+          <img src="/img/mobixcapa.png" alt="" width="1024" height="1536" fetchPriority="high" className="w-full" />
+          <Visor className="hero-foco absolute left-[21%] top-[9%] h-[34%] w-[29%] text-rec" />
+        </div>
       </div>
       <div aria-hidden="true" className="hero-flash pointer-events-none absolute inset-0 z-20 bg-white opacity-0" />
 
+      <div className="hero-sai-cima">
       <div className="hero-entra flex items-center justify-between font-mono text-[0.68rem] text-giz/70 sm:text-xs">
         <p className="flex items-center gap-2">
           <span className="size-2 animate-pulse rounded-full bg-rec" />
           REC <span ref={tempoRef}>00:00:00</span>
         </p>
         <p>Challenge FIAP 2026 × JOVI</p>
+      </div>
       </div>
 
       <h1
@@ -98,23 +105,26 @@ const Hero = () => {
         style={{ fontVariationSettings: "'wdth' var(--largura, 100)" }}
         className="flex flex-1 flex-col justify-between py-8 text-[clamp(3.1rem,12.5vw,12.5rem)] font-extrabold leading-[0.86] tracking-[-0.045em] text-white mix-blend-difference"
       >
-        <span aria-hidden="true" className="block overflow-hidden pb-[0.06em]">
+        <span aria-hidden="true" className="hero-sai-esquerda block overflow-hidden pb-[0.06em]">
           <span className="hero-linha hero-linha-1 block">
             <span key={modo} className="hero-palavra inline-block">
               {modos[modo].titulo}
             </span>
           </span>
         </span>
-        <span aria-hidden="true" className="block overflow-hidden pb-[0.06em] text-right">
+        <span aria-hidden="true" className="hero-sai-direita block overflow-hidden pb-[0.06em] text-right">
           <span className="hero-linha hero-linha-2 block">vira texto.</span>
         </span>
       </h1>
 
       <div className="relative z-10 grid gap-7 lg:grid-cols-[1fr_auto_1fr] lg:items-end">
+        <div className="hero-sai-esquerda">
         <p className="hero-entra max-w-xs text-[0.95rem] leading-6 text-giz/75">
           Antes do professor apagar. O FLOW é a câmera da JOVI para quem estuda: lê a foto, corrige e guarda na pasta da matéria.
         </p>
+        </div>
 
+        <div className="hero-sai-baixo">
         <div role="group" aria-label="Modo da câmera" className="hero-entra flex gap-1 font-mono lg:justify-center text-[0.7rem] uppercase sm:text-xs">
           {modos.map((item, indice) => (
             <button
@@ -133,6 +143,9 @@ const Hero = () => {
           ))}
         </div>
 
+        </div>
+
+        <div className="hero-sai-direita">
         <div className="hero-entra flex flex-wrap items-center gap-2 sm:gap-3 lg:justify-end">
           <a href="#solucao" className="botao botao-linha px-4 py-3 text-sm sm:px-5">
             Como funciona
@@ -142,6 +155,7 @@ const Hero = () => {
             Testar o Meu FLOW
             <PiArrowRight aria-hidden="true" />
           </Link>
+        </div>
         </div>
       </div>
     </section>
