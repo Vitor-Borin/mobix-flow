@@ -63,16 +63,16 @@ const Solucao = () => {
           frase="O FLOW muda a câmera da JOVI para a sala de aula. Do clique à pasta da matéria em quatro passos."
         />
 
-        <div className="mt-20 grid gap-16 md:grid-cols-[minmax(0,22rem)_1fr] md:gap-20 lg:gap-32">
+        <div className="mt-20 grid gap-16 md:grid-cols-[minmax(0,21rem)_1fr] md:gap-20 lg:gap-32">
           <div className="md:sticky md:top-28 md:self-start">
-            <div className="relative mx-auto aspect-[9/19] w-full max-w-[min(18rem,32svh)] overflow-hidden rounded-[2.4rem] border-[6px] border-[#22252c] bg-black shadow-[0_40px_80px_-30px_rgb(46_75_255/0.45)]">
+            <div className="relative mx-auto aspect-[9/18] w-full max-w-[min(21rem,38svh)] overflow-hidden rounded-[2.6rem] border-[7px] border-[#22252c] bg-[#0c0c14] shadow-[0_40px_80px_-30px_rgb(46_75_255/0.45)]">
               {telasPorEtapa.map((imagem, indice) => (
                 <img
                   key={indice}
                   src={imagem}
                   alt=""
                   loading="lazy"
-                  className={`solucao-tela absolute inset-0 h-full w-full object-cover object-top ${indice === 1 ? "solucao-tela-corrigida" : ""} ${indice === 0 ? "" : "invisible opacity-0"}`}
+                  className={`solucao-tela absolute inset-0 h-full w-full object-contain object-top ${indice === 1 ? "solucao-tela-corrigida" : ""} ${indice === 0 ? "" : "invisible opacity-0"}`}
                 />
               ))}
               <div aria-hidden="true" className="solucao-scanner absolute inset-x-0 top-0 h-[10%] bg-gradient-to-b from-transparent via-flow/30 to-transparent" />
@@ -80,7 +80,7 @@ const Solucao = () => {
                 <span ref={rotuloRef}>{etapas[0].rotulo}</span>
               </p>
             </div>
-            <p className="mx-auto mt-5 max-w-[min(18rem,32svh)] font-mono text-[0.72rem] leading-5 text-cinza">
+            <p className="mx-auto mt-5 max-w-[min(21rem,38svh)] font-mono text-[0.72rem] leading-5 text-cinza">
               Texto lido: <span ref={ocrRef} className="text-giz">...</span>
             </p>
           </div>

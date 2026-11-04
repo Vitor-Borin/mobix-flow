@@ -7,6 +7,16 @@ Esta é a entrega da **Sprint 4**, feita em conjunto para **Front-End Design** e
 - **Deploy na Vercel:** https://mobix-flow.vercel.app/
 - **Repositório:** https://github.com/Vitor-Borin/mobix-flow
 
+## Integrantes
+
+| Nome | RM | Função no projeto |
+| --- | --- | --- |
+| Beatriz Albuquerque | RM572055 | Landing page e Front-End |
+| Nicole Couto | RM569191 | UX/UI e protótipo |
+| Robert Josino | RM571622 | Pesquisa e Storytelling |
+| Ryan Maick | RM573051 | Python e dados |
+| Vitor Borin | RM573194 | App FLOW e React |
+
 ## O que tem no site
 
 | Rota | Acesso | O que faz |
