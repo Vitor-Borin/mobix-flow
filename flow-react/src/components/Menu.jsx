@@ -7,7 +7,6 @@ import useAuth from "../hooks/useAuth"
 import useMenuVisivel from "../hooks/useMenuVisivel"
 import { navegacao } from "../data/conteudo"
 
-// Menu em retângulo flutuante: some ao descer, volta ao subir e abre expandindo o próprio retângulo
 const Menu = () => {
   const { usuario } = useAuth()
   const visivel = useMenuVisivel()

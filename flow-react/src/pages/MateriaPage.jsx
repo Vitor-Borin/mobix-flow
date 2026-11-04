@@ -59,7 +59,6 @@ const MateriaPage = () => {
     }
   }
 
-  // Fixadas primeiro, depois as mais recentes
   const ordenadas = capturas.slice().sort((a, b) => {
     const fixadaA = fixadas.includes(a.id) ? 1 : 0
     const fixadaB = fixadas.includes(b.id) ? 1 : 0

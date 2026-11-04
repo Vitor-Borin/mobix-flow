@@ -7,7 +7,6 @@ export const navegacao = [
   { href: "/#contato", nome: "Contato" },
 ]
 
-// Modos da câmera que aparecem no hero: o título troca junto com o modo escolhido
 export const modos = [
   { nome: "Lousa", titulo: "A lousa" },
   { nome: "Slide", titulo: "O slide" },
@@ -15,7 +14,6 @@ export const modos = [
   { nome: "Caderno", titulo: "O caderno" },
 ]
 
-// Um dia de aula: os registros que acabam esquecidos na galeria do celular
 export const diaDoEstudante = [
   {
     hora: "08:10",
@@ -132,7 +130,6 @@ export const dicasDeEstudo = [
   "Estude em blocos de 25 minutos com 5 de pausa.",
 ]
 
-// O que só a câmera da JOVI consegue fazer, segundo a proposta do grupo
 export const ajustesModoAula = [
   { nome: "Vários quadros", texto: "Junta várias fotos em uma só para tirar o ruído e a tremida." },
   { nome: "Sem reflexo", texto: "Apaga o brilho da luz e da janela em cima da lousa." },
@@ -147,7 +144,6 @@ export const gradeHoraria = [
   { dia: "Qui", hora: "08:00", materia: "Python", sala: "Lab 4" },
 ]
 
-// APIs abertas do Google que tornam o FLOW viável
 export const apisGoogle = [
   {
     nome: "ML Kit Document Scanner",

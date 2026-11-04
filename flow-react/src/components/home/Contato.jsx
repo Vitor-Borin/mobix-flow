@@ -1,47 +1,13 @@
-import { useState } from "react"
 import { PiArrowUpRight } from "react-icons/pi"
 import TituloSecao from "../TituloSecao"
+import useContato from "../../hooks/useContato"
 
-// Formulário da Sprint 3, mantido: envia pelo FormSubmit para o e-mail da equipe
 const Contato = () => {
-  const [status, setStatus] = useState({ tipo: "parado", mensagem: "" })
-  const [enviando, setEnviando] = useState(false)
+  const { status, enviando, enviar: enviarMensagem } = useContato()
 
-  const enviar = async (evento) => {
+  const enviar = (evento) => {
     evento.preventDefault()
-
-    if (enviando) return
-
-    const formulario = evento.currentTarget
-    const dados = Object.fromEntries(new FormData(formulario).entries())
-    dados._subject = "Novo contato pelo site MOBIX / FLOW"
-
-    setEnviando(true)
-    setStatus({ tipo: "enviando", mensagem: "Enviando sua mensagem..." })
-
-    try {
-      const resposta = await fetch("https://formsubmit.co/ajax/mobix.fiap@gmail.com", {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(dados),
-      })
-      const resultado = await resposta.json()
-
-      if (!resposta.ok || (resultado.success !== true && resultado.success !== "true")) {
-        throw new Error(resultado.message || "O serviço não conseguiu enviar sua mensagem.")
-      }
-
-      formulario.reset()
-      setStatus({ tipo: "enviado", mensagem: "Mensagem enviada. A equipe MOBIX responde pelo seu e-mail." })
-    } catch (falha) {
-      console.log(falha)
-      setStatus({
-        tipo: "erro",
-        mensagem: "Não foi possível enviar agora. Tente de novo ou escreva para mobix.fiap@gmail.com.",
-      })
-    } finally {
-      setEnviando(false)
-    }
+    enviarMensagem(evento.currentTarget)
   }
 
   const coresStatus = {

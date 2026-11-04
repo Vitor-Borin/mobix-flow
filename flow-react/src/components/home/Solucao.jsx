@@ -3,7 +3,6 @@ import { gsap, ScrollTrigger, useGSAP } from "../../gsap"
 import TituloSecao from "../TituloSecao"
 import { etapas, textoReconhecido } from "../../data/conteudo"
 
-// Cada etapa troca a tela do celular, que fica parado enquanto o texto passa
 const telasPorEtapa = ["/img/img4.png", "/img/img4.png", "/img/img2.png", "/img/img5.png"]
 
 const Solucao = () => {
@@ -45,7 +44,6 @@ const Solucao = () => {
           })
         })
 
-        // Linha de leitura passando pela tela
         gsap.fromTo(".solucao-scanner", { yPercent: -10 }, { yPercent: 1000, duration: 2.4, ease: "none", repeat: -1 })
       })
 

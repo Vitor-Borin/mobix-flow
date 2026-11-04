@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { buscarCapturas, buscarMaterias } from "../services/api"
 
-// Busca as matérias e as capturas e conta quantas capturas cada matéria tem
 const useMaterias = () => {
   const [materias, setMaterias] = useState([])
   const [capturas, setCapturas] = useState([])

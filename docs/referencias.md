@@ -35,9 +35,11 @@ O azul do protótipo do app (`#2e4bff`) é a única cor de destaque, sobre um qu
 
 O hero não segue o padrão de texto de um lado e imagem do outro. A tela inteira funciona como o visor da câmera: os cantos de foco ficam nas bordas, o celular JOVI fica no centro e o título atravessa o celular, invertendo a cor onde passa por cima dele (`mix-blend-mode: difference`). Embaixo, o seletor de modo (Lousa, Slide, Livro, Caderno) troca a primeira palavra do título, como os modos do app de câmera.
 
-## Vidro
+Ao rolar a página, as duas linhas do título saem pelos lados e só o celular continua, descendo.
 
-Testamos o efeito de vidro estilo Apple em CSS no menu e nos botões, mas o resultado não ficou bom e foi retirado. O menu e os botões agora são sólidos, com um único padrão de botão em `index.css` (`.botao`, `.botao-flow`, `.botao-claro`, `.botao-linha`).
+## Botões
+
+Um único padrão de botão para o site inteiro, definido em `index.css`: `.botao-flow` (azul), `.botao-claro`, `.botao-linha` (contorno) e `.botao-icone`.
 
 ## Animação e acessibilidade
 

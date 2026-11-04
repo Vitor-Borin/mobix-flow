@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-// O menu some quando a página desce e volta quando sobe
 const useMenuVisivel = () => {
   const [visivel, setVisivel] = useState(true)
 

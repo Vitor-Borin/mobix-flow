@@ -3,7 +3,6 @@ import { gsap, useGSAP } from "../../gsap"
 import TituloSecao from "../TituloSecao"
 import { telas } from "../../data/conteudo"
 
-// Grade irregular com as telas do protótipo; cada tela inclina seguindo o mouse
 const Galeria = () => {
   const secaoRef = useRef(null)
 

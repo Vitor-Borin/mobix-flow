@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-// Estado que sobrevive ao recarregar a página
 const useLocalStorage = (chave, valorInicial) => {
   const [valor, setValor] = useState(() => {
     const salvo = localStorage.getItem(chave)

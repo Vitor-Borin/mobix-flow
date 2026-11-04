@@ -58,8 +58,7 @@
 }
 
 @layer components {
-  /* Botões sólidos: um padrão só para o site inteiro */
-  .botao {
+    .botao {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -113,8 +112,7 @@
     border-color: var(--color-giz);
   }
 
-  /* Botão quadrado de ícone (menu, fixar, apagar) */
-  .botao-icone {
+    .botao-icone {
     display: grid;
     place-items: center;
     border-radius: 0.5rem;
@@ -128,8 +126,7 @@
     border-color: var(--color-giz);
   }
 
-  /* Cantos de visor de câmera */
-  .visor {
+    .visor {
     position: relative;
   }
 
@@ -146,8 +143,7 @@
   .visor > .canto-3 { bottom: 0; left: 0; border-bottom: 2px solid; border-left: 2px solid; }
   .visor > .canto-4 { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
 
-  /* Pauta de caderno nas seções claras */
-  .pauta {
+    .pauta {
     background-image: repeating-linear-gradient(
       to bottom,
       transparent 0,

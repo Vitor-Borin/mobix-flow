@@ -3,7 +3,6 @@ import { gsap, useGSAP } from "../../gsap"
 import TituloSecao from "../TituloSecao"
 import { apisGoogle } from "../../data/conteudo"
 
-// Viabilidade técnica pedida pelo Challenge: cada etapa do FLOW apoiada numa API aberta do Google
 const Viabilidade = () => {
   const secaoRef = useRef(null)
 

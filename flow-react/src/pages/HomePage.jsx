@@ -11,7 +11,6 @@ import Equipe from "../components/home/Equipe"
 import Contato from "../components/home/Contato"
 
 const HomePage = () => {
-  // As imagens carregam aos poucos e mudam a altura da página: recalcula os gatilhos do scroll quando cada uma chega
   useEffect(() => {
     const imagens = document.querySelectorAll("main img")
     let espera

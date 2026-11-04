@@ -3,7 +3,6 @@ import { gsap, SplitText, useGSAP } from "../../gsap"
 import TituloSecao from "../TituloSecao"
 import { ajustesModoAula, gradeHoraria } from "../../data/conteudo"
 
-// O que separa o FLOW de um app de notas: a câmera captura diferente e a grade horária confirma a matéria
 const Diferencial = () => {
   const secaoRef = useRef(null)
   const fraseRef = useRef(null)
@@ -40,7 +39,6 @@ const Diferencial = () => {
           }
         )
 
-        // A linha da aula atual acende, como se o FLOW tivesse acabado de confirmar a matéria
         gsap.fromTo(
           ".grade-agora",
           { backgroundColor: "rgba(46, 75, 255, 0)", color: "#2b2a27" },

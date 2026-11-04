@@ -1,5 +1,4 @@
-// MockAPI com dois recursos: materias e capturas (cada captura tem o materiaId)
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL || "https://6aea801e3d3dd3d37be6ae89.mockapi.io/api/v1"
 
 const pedir = async (caminho, opcoes) => {
   const resposta = await fetch(`${API_URL}${caminho}`, opcoes)
@@ -17,7 +16,6 @@ export const buscarMateria = (id) => pedir(`/materias/${id}`)
 
 export const buscarCapturas = () => pedir("/capturas")
 
-// A MockAPI responde 404 quando o filtro não encontra nada: nesse caso a matéria só está vazia
 export const buscarCapturasDaMateria = async (materiaId) => {
   const resposta = await fetch(`${API_URL}/capturas?materiaId=${materiaId}`)
 

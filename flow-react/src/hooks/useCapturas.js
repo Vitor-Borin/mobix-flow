@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { apagarCaptura, buscarCapturasDaMateria, buscarMateria, criarCaptura } from "../services/api"
 
-// Capturas de uma matéria: carregar, adicionar e apagar
 const useCapturas = (materiaId) => {
   const [materia, setMateria] = useState(null)
   const [capturas, setCapturas] = useState([])
@@ -51,7 +50,6 @@ const useCapturas = (materiaId) => {
         tipo: dados.tipo,
         texto: dados.texto,
         data: new Date().toISOString(),
-        // Estimativa simulada da melhora de nitidez entre 40% e 80%
         nitidez: Math.round(40 + Math.random() * 40),
       })
       setCapturas(capturas.concat(nova))

@@ -1,4 +1,3 @@
-// Moldura com os quatro cantos de foco de uma câmera
 const Visor = ({ children, className = "" }) => {
   return (
     <div className={`visor ${className}`}>

@@ -5,7 +5,6 @@ import { gsap, useGSAP } from "../../gsap"
 import Visor from "../Visor"
 import { modos } from "../../data/conteudo"
 
-// A tela inteira é o visor da câmera: o título atravessa o celular e muda com o modo escolhido
 const Hero = () => {
   const heroRef = useRef(null)
   const tituloRef = useRef(null)
@@ -18,7 +17,6 @@ const Hero = () => {
       const mm = gsap.matchMedia()
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Abertura: os cantos fecham na tela, o celular entra em foco e o obturador dispara
         const abertura = gsap.timeline({ defaults: { ease: "power3.out" } })
         abertura
           .from(".hero-tela .canto", { scale: 3, opacity: 0, duration: 0.9, stagger: 0.06 }, 0)
@@ -29,7 +27,6 @@ const Hero = () => {
           .fromTo(".hero-flash", { opacity: 0.8 }, { opacity: 0, duration: 0.5, ease: "power1.out" }, 1.3)
           .from(".hero-entra", { y: 16, opacity: 0, duration: 0.7, stagger: 0.07 }, 0.9)
 
-        // Contador de gravação
         const relogio = { segundos: 0 }
         gsap.to(relogio, {
           segundos: 3599,
@@ -43,7 +40,6 @@ const Hero = () => {
           },
         })
 
-        // Ao rolar, os textos saem pelos lados e só o celular continua, descendo
         const saida = gsap.timeline({
           defaults: { ease: "power1.in" },
           scrollTrigger: { trigger: heroRef.current, start: "top top", end: "bottom top", scrub: 0.4 },
@@ -59,7 +55,6 @@ const Hero = () => {
     { scope: heroRef }
   )
 
-  // Troca de modo: a palavra nova sobe por baixo e, sem clique, o próximo modo entra sozinho
   useGSAP(
     () => {
       gsap.from(".hero-palavra", { yPercent: 100, duration: 0.6, ease: "power3.out" })

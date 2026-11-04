@@ -1,5 +1,3 @@
-// Imita a MockAPI (materias e capturas) para testar sem internet. Uso: npm run api:local
-// e, no .env.local, VITE_API_URL=http://localhost:4010. Os dados voltam ao original quando o servidor reinicia.
 import { createServer } from "node:http"
 import { readFileSync } from "node:fs"
 import { join } from "node:path"

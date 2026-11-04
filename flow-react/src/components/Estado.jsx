@@ -1,6 +1,5 @@
 import Visor from "./Visor"
 
-// Mensagens de carregando, erro e lista vazia
 const Estado = ({ tipo, mensagem }) => {
   if (tipo === "carregando") {
     return (

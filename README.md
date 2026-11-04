@@ -2,7 +2,7 @@
 
 Projeto do grupo MOBIX para o Challenge FIAP 2026 com a JOVI. O FLOW é uma proposta de câmera para estudantes: lê lousa, slide, livro e caderno, corrige a imagem, extrai o texto e guarda cada captura na pasta da matéria.
 
-Esta é a entrega da **Sprint 4**, feita em conjunto para **Front-End Design** e **Web Development**. Ela evolui a landing page da Sprint 3 (pasta `MOBIX/`, em HTML e CSS, e a primeira versão em React na mesma pasta `flow-react/`).
+Esta é a entrega da **Sprint 4**, feita em conjunto para **Front-End Design** e **Web Development**. Ela evolui a landing page da Sprint 3, que era em HTML e CSS, para React, e acrescenta login, área privada e consumo de API.
 
 - **Deploy na Vercel:** https://mobix-flow.vercel.app/
 - **Repositório:** https://github.com/Vitor-Borin/mobix-flow
@@ -49,19 +49,17 @@ cd mobix-flow/flow-react
 npm install
 ```
 
-Crie o arquivo `.env` dentro de `flow-react/` copiando o `.env.example` e coloque o endereço da MockAPI:
-
-```
-VITE_API_URL=https://6aea801e3d3dd3d37be6ae89.mockapi.io/api/v1
-```
-
-Depois:
-
 ```bash
 npm run dev
 ```
 
 Abra o endereço que o Vite mostrar (normalmente `http://localhost:5173`).
+
+O projeto já usa a MockAPI do grupo, então não é preciso criar nenhum arquivo de configuração. Para apontar para outra API, crie `flow-react/.env` a partir do `.env.example`:
+
+```
+VITE_API_URL=https://6aea801e3d3dd3d37be6ae89.mockapi.io/api/v1
+```
 
 Para gerar a versão de produção: `npm run build` e `npm run preview`.
 
@@ -88,11 +86,11 @@ Os dados vêm de `mockapi/*.json` e voltam ao original quando o servidor reinici
 
 | Requisito | Onde |
 | --- | --- |
-| Componentização e props | `src/components/` (seções da home em `components/home/`, `CapturaCard`, `Estado`, `Visor`, `Menu`) |
+| Componentização e props | `src/components/` (seções da home em `components/home/`, `TituloSecao`, `CapturaCard`, `Estado`, `Visor`, `Menu`) |
 | Rotas públicas e privadas | `src/main.jsx` e `src/components/RotaPrivada.jsx` |
 | Hooks nativos | `useState`, `useEffect`, `useRef`, `useContext`, `useParams`, `useNavigate`, `useLocation` |
-| Hooks customizados | `src/hooks/`: `useAuth`, `useMaterias`, `useCapturas`, `useLocalStorage`, `useMenuVisivel` |
-| Lógica separada do visual | Páginas só chamam os hooks. Busca, criação e remoção na API ficam em `hooks/` e `services/api.js` |
+| Hooks customizados | `src/hooks/`: `useAuth`, `useMaterias`, `useCapturas`, `useContato`, `useLocalStorage`, `useMenuVisivel` |
+| Lógica separada do visual | Os componentes só chamam os hooks. Login, busca, criação e remoção na API e envio do formulário de contato ficam em `hooks/`, `context/` e `services/api.js` |
 | Consumo de API | `src/services/api.js` (GET, POST e DELETE na MockAPI) |
 | Tailwind CSS | Toda a estilização. Tokens de cor e fonte em `@theme`, no `src/index.css` |
 | Responsividade | Layout mobile first, com ajustes para tablet (`md`) e desktop (`lg`) |
@@ -101,13 +99,7 @@ Os dados vêm de `mockapi/*.json` e voltam ao original quando o servidor reinici
 
 ## Uso de IA no projeto
 
-Usamos o Claude (Anthropic) como assistente durante a Sprint 4. Ele ajudou em quatro frentes:
-- Pesquisar referências no Awwwards e as fontes.
-- Testar e descartar o efeito de vidro estilo Apple no menu e nos botões. O grupo preferiu botões sólidos.
-- Propor a divisão do `App.jsx` da Sprint 3 em componentes, hooks e páginas.
-- Escrever a primeira versão das animações em GSAP.
-
-O conteúdo da proposta, as telas do protótipo, a escolha das referências e da direção visual e os textos foram decididos pelo grupo. Também revisamos e testamos cada parte do código antes da entrega. Não usamos imagem gerada por IA no site: a foto de estudantes da versão anterior foi retirada por esse motivo.
+Usamos o Claude (Anthropic) como apoio durante a Sprint 4, em três pontos: pesquisa de referências visuais no Awwwards, sugestão de como dividir o código da Sprint 3 em componentes, hooks e páginas, e ajuda nas animações com GSAP. A proposta, as telas do protótipo, a direção visual e os textos são do grupo, e todo o código foi revisado e testado pela equipe antes da entrega. Não usamos imagens geradas por IA no site.
 
 ## Estrutura
 
@@ -115,7 +107,6 @@ O conteúdo da proposta, as telas do protótipo, a escolha das referências e da
 .
 ├── INTEGRANTES.TXT
 ├── docs/referencias.md    # Referências do Awwwards e direção visual
-├── MOBIX/                 # Landing page original da Sprint 3 (HTML e CSS)
 └── flow-react/            # Sprint 4 (React)
     ├── mockapi/           # Dados para montar a MockAPI
     ├── public/img/        # Telas do protótipo e foto do celular
@@ -145,7 +136,7 @@ O `vercel.json` também redireciona as rotas para o `index.html`. Sem isso, reca
 
 ## Entrega em ZIP
 
-O ZIP leva este `README.md`, o `INTEGRANTES.TXT`, a pasta `MOBIX/` e a pasta `flow-react/`. Ficam de fora `node_modules/`, `dist/` e `.git/`.
+O ZIP leva este `README.md`, o `INTEGRANTES.TXT`, a pasta `docs/` e a pasta `flow-react/` com todo o código-fonte. Ficam de fora `node_modules/`, `dist/` e `.git/`. Para rodar a partir do ZIP: entrar em `flow-react/`, `npm install` e `npm run dev`.
 
 ## Atividade
 

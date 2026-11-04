@@ -2,7 +2,6 @@ import { useRef } from "react"
 import { gsap, useGSAP } from "../../gsap"
 import { diaDoEstudante } from "../../data/conteudo"
 
-// Um dia de aula: a seção trava, os momentos passam de lado e a galeria do celular vai enchendo
 const Problema = () => {
   const secaoRef = useRef(null)
   const trilhaRef = useRef(null)
@@ -27,7 +26,6 @@ const Problema = () => {
             scrub: 0.6,
             invalidateOnRefresh: true,
             onUpdate: (gatilho) => {
-              // Interpola o número de fotos entre um momento e o próximo
               const posicao = gatilho.progress * (totais.length - 1)
               const atual = Math.floor(posicao)
               const proximo = Math.min(atual + 1, totais.length - 1)
@@ -40,7 +38,6 @@ const Problema = () => {
 
         linha
           .to(trilha, { x: () => -distancia(), ease: "none", duration: 1 }, 0)
-          // A noite chega só no último momento do dia
           .to(secaoRef.current, { backgroundColor: "#0b0c0f", color: "#f3f1ec", ease: "power2.in", duration: 0.18 }, 0.8)
           .to(".problema-pauta", { opacity: 0, ease: "none", duration: 0.18 }, 0.8)
       })

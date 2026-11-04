@@ -14,7 +14,6 @@ const AuthProvider = ({ children }) => {
       return false
     }
 
-    // Guarda só o que a interface precisa, sem a senha
     setUsuario({ id: encontrado.id, nome: encontrado.nome, curso: encontrado.curso })
     return true
   }
