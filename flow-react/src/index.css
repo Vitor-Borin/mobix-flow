@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tinta: #0b0c0f;
+  --color-grafite: #15171c;
+  --color-linha: #2a2d35;
+  --color-giz: #f3f1ec;
+  --color-cinza: #8d929b;
+  --color-papel: #ebe7dd;
+  --color-papel-linha: #cfc8b8;
+  --color-lapis: #2b2a27;
+  --color-flow: #2e4bff;
+  --color-flow-claro: #9aa8ff;
+  --color-rec: #ff4a2b;
+
+  --font-display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+  --font-texto: "Switzer", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --ease-obturador: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-tinta);
+    color: var(--color-giz);
+    font-family: var(--font-texto);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-flow);
+    color: var(--color-giz);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-flow-claro);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Botões sólidos: um padrão só para o site inteiro */
+  .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 999px;
+    font-weight: 600;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease,
+      transform 160ms var(--ease-obturador);
+  }
+
+  .botao:active {
+    transform: scale(0.97);
+  }
+
+  .botao svg {
+    transition: transform 200ms var(--ease-obturador);
+  }
+
+  .botao:hover svg {
+    transform: translateX(2px);
+  }
+
+  .botao-flow {
+    background: var(--color-flow);
+    color: #fff;
+  }
+
+  .botao-flow:hover {
+    background: #1f38e0;
+  }
+
+  .botao-claro {
+    background: var(--color-giz);
+    color: var(--color-tinta);
+  }
+
+  .botao-claro:hover {
+    background: #fff;
+  }
+
+  .botao-linha {
+    border: 1px solid rgb(243 241 236 / 0.25);
+    color: var(--color-giz);
+  }
+
+  .botao-linha:hover {
+    border-color: var(--color-giz);
+  }
+
+  /* Botão quadrado de ícone (menu, fixar, apagar) */
+  .botao-icone {
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-linha);
+    transition:
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .botao-icone:hover {
+    border-color: var(--color-giz);
+  }
+
+  /* Cantos de visor de câmera */
+  .visor {
+    position: relative;
+  }
+
+  .visor > .canto {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: currentColor;
+    pointer-events: none;
+  }
+
+  .visor > .canto-1 { top: 0; left: 0; border-top: 2px solid; border-left: 2px solid; }
+  .visor > .canto-2 { top: 0; right: 0; border-top: 2px solid; border-right: 2px solid; }
+  .visor > .canto-3 { bottom: 0; left: 0; border-bottom: 2px solid; border-left: 2px solid; }
+  .visor > .canto-4 { bottom: 0; right: 0; border-bottom: 2px solid; border-right: 2px solid; }
+
+  /* Pauta de caderno nas seções claras */
+  .pauta {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgb(43 42 39 / 0.09) 31px,
+      rgb(43 42 39 / 0.09) 32px
+    );
+  }
+
+  .campo {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-linha);
+    background: var(--color-grafite);
+    padding: 0.8rem 1rem;
+    color: var(--color-giz);
+    font-size: 0.95rem;
+    transition: border-color 160ms ease;
+  }
+
+  .campo::placeholder {
+    color: var(--color-cinza);
+  }
+
+  .campo:hover {
+    border-color: #3b3f4a;
+  }
+
+  .campo:focus {
+    outline: none;
+    border-color: var(--color-flow-claro);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

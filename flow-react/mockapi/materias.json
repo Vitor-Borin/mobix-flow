@@ -1,0 +1,7 @@
+[
+  { "id": "1", "nome": "Front-End Design", "professor": "Prof. Lucas Silva de Sousa", "cor": "#2e4bff" },
+  { "id": "2", "nome": "Web Development", "professor": "Prof. Caio Vinícius Gonçalves de Oliveira", "cor": "#ff4a2b" },
+  { "id": "3", "nome": "Computational Thinking with Python", "professor": "Prof. Francisco Elanio Bezerra", "cor": "#f3c623" },
+  { "id": "4", "nome": "Software & Total Experience Design", "professor": "Prof. José Henrique Dellosso Cordeiro", "cor": "#3ecf8e" },
+  { "id": "5", "nome": "Storytelling e Inspiração Empreendedora", "professor": "Profa. Ana Claudia Moreira Madaleno", "cor": "#d6d1c4" }
+]

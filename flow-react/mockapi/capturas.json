@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "materiaId": "1",
+    "titulo": "CSS Grid: grid container e grid item",
+    "tipo": "slide",
+    "texto": "display: grid;\ngrid-template-columns: repeat(12, 1fr);\ngap: 1.25rem;\n.item { grid-column: span 7; }",
+    "data": "2026-08-27T19:10:00.000Z",
+    "nitidez": 62
+  },
+  {
+    "id": "2",
+    "materiaId": "1",
+    "titulo": "Breakpoints do projeto",
+    "tipo": "lousa",
+    "texto": "Mobile até 767px\nTablet 768px a 1023px\nDesktop a partir de 1024px\nMobile first: min-width",
+    "data": "2026-09-10T20:05:00.000Z",
+    "nitidez": 48
+  },
+  {
+    "id": "3",
+    "materiaId": "2",
+    "titulo": "useEffect e array de dependências",
+    "tipo": "slide",
+    "texto": "[] roda só na montagem\n[variavel] roda quando a variável muda\nsem array roda a cada render",
+    "data": "2026-09-18T19:40:00.000Z",
+    "nitidez": 71
+  },
+  {
+    "id": "4",
+    "materiaId": "2",
+    "titulo": "Rotas com parâmetro",
+    "tipo": "caderno",
+    "texto": "{ path: \"materia/:id\", element: <MateriaPage /> }\nconst { id } = useParams()",
+    "data": "2026-09-03T21:15:00.000Z",
+    "nitidez": 55
+  },
+  {
+    "id": "5",
+    "materiaId": "2",
+    "titulo": "useRef",
+    "tipo": "livro",
+    "texto": "Cria uma caixinha mutável que não causa re-render.\nUsado para acessar elementos do DOM.",
+    "data": "2026-09-10T20:30:00.000Z",
+    "nitidez": 44
+  },
+  {
+    "id": "6",
+    "materiaId": "3",
+    "titulo": "Listas e dicionários",
+    "tipo": "lousa",
+    "texto": "aluno = {\"nome\": \"Ana\", \"notas\": [8, 9.5]}\nmedia = sum(aluno[\"notas\"]) / len(aluno[\"notas\"])",
+    "data": "2026-08-20T18:50:00.000Z",
+    "nitidez": 67
+  },
+  {
+    "id": "7",
+    "materiaId": "3",
+    "titulo": "try / except",
+    "tipo": "slide",
+    "texto": "try:\n    idade = int(input(\"Idade: \"))\nexcept ValueError:\n    print(\"Digite um número\")",
+    "data": "2026-10-01T19:20:00.000Z",
+    "nitidez": 59
+  },
+  {
+    "id": "8",
+    "materiaId": "4",
+    "titulo": "10 heurísticas de Nielsen",
+    "tipo": "slide",
+    "texto": "1 Visibilidade do status\n2 Correspondência com o mundo real\n3 Controle e liberdade\n4 Consistência e padrões\n5 Prevenção de erros",
+    "data": "2026-09-24T20:00:00.000Z",
+    "nitidez": 52
+  },
+  {
+    "id": "9",
+    "materiaId": "4",
+    "titulo": "Caso de uso: capturar lousa",
+    "tipo": "caderno",
+    "texto": "Ator: estudante\nFluxo: abrir câmera > modo aula > capturar > confirmar matéria > salvar",
+    "data": "2026-08-13T19:30:00.000Z",
+    "nitidez": 41
+  },
+  {
+    "id": "10",
+    "materiaId": "5",
+    "titulo": "Story Canvas",
+    "tipo": "lousa",
+    "texto": "Propósito, resultados, indicadores, audiência, personagens, mensagens-chave, chamada para ação, tom de voz, canais, história",
+    "data": "2026-08-25T21:00:00.000Z",
+    "nitidez": 74
+  }
+]

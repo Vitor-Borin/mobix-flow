@@ -1,0 +1,6 @@
+*.zip
+.vscode/
+flow-react/.agents/
+flow-react/skills-lock.json
+.claude/
+*.desligado
